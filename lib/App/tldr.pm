@@ -100,6 +100,7 @@ sub run {
 }
 
 my $CHECK = "\N{U+2713}";
+my $SUSHI = "\N{U+1F363}";
 
 sub _render {
     my ($self, $content, $query) = @_;
@@ -140,7 +141,7 @@ sub _render {
             $code =~ s/\b$query\b/
               "\e[32m$query\e[m"
             /eg;
-            print "    $code\n\n";
+            print "    $SUSHI  $code\n\n";
         }
     }
 }
