@@ -96,13 +96,13 @@ sub run {
     }
     die "Couldn't find tldr for '$arg'\n" unless $content;
     binmode STDOUT, ":utf8";
-    $self->_render($content);
+    $self->_render($content, $arg);
 }
 
 my $CHECK = "\N{U+2713}";
 
 sub _render {
-    my ($self, $content) = @_;
+    my ($self, $content, $query) = @_;
 
     my ($width) = Term::ReadKey::GetTerminalSize();
     $width -= 4;
@@ -127,16 +127,20 @@ sub _render {
             }
             my $fold = Text::Fold::fold_text($description, $width);
             print "\n";
-            print "  \e[1;32m$_\e[m\n" for split /\n/, $fold;
+            print "  \e[32m$_\e[m\n" for split /\n/, $fold;
             print "\n";
         } elsif ($line =~ s/^[*-]\s*//) {
             my $fold = Text::Fold::fold_text($line, $width - 2);
             my ($first, @rest) = split /\n/, $fold;
-            print "  \e[1;4;37m$CHECK $first\e[m\n";
-            print "    \e[1;4;37m$_\e[m\n" for @rest;
+            print "  \e[1m$CHECK \e[4m$first\e[m\n";
+            print "    \e[1m\e[4m$_\e[m\n" for @rest;
             print "\n";
         } elsif ($line =~ /`([^`]+)`/) {
-            print "    $1\n\n";
+            my $code = $1;
+            $code =~ s/\b$query\b/
+              "\e[32m$query\e[m"
+            /eg;
+            print "    $code\n\n";
         }
     }
 }
