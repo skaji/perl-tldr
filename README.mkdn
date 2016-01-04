@@ -13,3 +13,5 @@
 - OS specific (linux, osx or sunos)
 
 `tldr -o osx brew`
+
+![](xt/screenshot.png)

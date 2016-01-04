@@ -5,6 +5,10 @@ requires 'IO::Socket::SSL';
 requires 'Term::ReadKey';
 requires 'Text::Fold';
 
+on develop => sub {
+    requires 'Capture::Tiny';
+};
+
 on test => sub {
     requires 'Test::More', '0.98';
 };

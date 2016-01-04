@@ -31,6 +31,7 @@
       },
       "develop" : {
          "requires" : {
+            "Capture::Tiny" : "0",
             "Dist::Milla" : "v1.0.15",
             "Test::Pod" : "1.41"
          }
