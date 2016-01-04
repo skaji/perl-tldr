@@ -4,7 +4,7 @@
 
 - Install
 
-`cpanm -nq git://github.com/shoichikaji/perl-tldr.git`
+`cpanm -nq App::tldr`
 
 - Show `tar` tldr
 
