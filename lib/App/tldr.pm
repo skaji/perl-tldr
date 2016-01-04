@@ -15,7 +15,7 @@ use constant REPOSITORY => $ENV{TLDR_REPOSITORY};
 
 our $VERSION = '0.01';
 
-my $URL = "https://raw.github.com/tldr-pages/tldr/master/pages/%s/%s.md";
+my $URL = "https://raw.githubusercontent.com/tldr-pages/tldr/master/pages/%s/%s.md";
 
 sub new {
     my ($class, %option) = @_;
