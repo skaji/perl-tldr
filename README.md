@@ -1,4 +1,4 @@
-# tldr
+# tldr [![Build Status](https://travis-ci.com/skaji/perl-tldr.svg?branch=master)](https://travis-ci.com/skaji/perl-tldr)
 
 > a perl client for [tldr](http://tldr-pages.github.io/)
 

@@ -22,6 +22,6 @@ ok run("--help")->exit == 0;
 ok run("--version")->exit == 0;
 
 like run("tar")->out, qr/Archiving utility/;
-like run("brew", "-o", "osx")->out, qr/Package manager for OS X/;
+like run("brew", "-o", "osx")->out, qr/Package manager for macOS/;
 
 done_testing;
