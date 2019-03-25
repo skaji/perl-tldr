@@ -9,7 +9,3 @@ requires 'File::Which';
 on develop => sub {
     requires 'Capture::Tiny';
 };
-
-on test => sub {
-    requires 'Test::More', '0.98';
-};
