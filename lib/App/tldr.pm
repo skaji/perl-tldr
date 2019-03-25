@@ -54,7 +54,7 @@ sub _guess_pager {
         }
     }
     return if !$cmd;
-    [$cmd, "-R"];
+    [$cmd, $cmd =~ /\bless$/ ? "-R" : ()];
 }
 
 sub _help {
