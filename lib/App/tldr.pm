@@ -15,7 +15,7 @@ use Text::Fold ();
 use constant DEBUG => $ENV{TLDR_DEBUG};
 use constant REPOSITORY => $ENV{TLDR_REPOSITORY};
 
-our $VERSION = '0.02';
+our $VERSION = '0.10';
 
 my $URL = "https://raw.githubusercontent.com/tldr-pages/tldr/master/pages/%s/%s.md";
 

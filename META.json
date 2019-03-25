@@ -45,17 +45,12 @@
             "Text::Fold" : "0",
             "perl" : "5.008005"
          }
-      },
-      "test" : {
-         "requires" : {
-            "Test::More" : "0.98"
-         }
       }
    },
    "provides" : {
       "App::tldr" : {
          "file" : "lib/App/tldr.pm",
-         "version" : "0.02"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -70,7 +65,10 @@
          "web" : "https://github.com/skaji/perl-tldr"
       }
    },
-   "version" : "0.02",
+   "version" : "0.10",
+   "x_contributors" : [
+      "Shoichi Kaji <skaji@outlook.com>"
+   ],
    "x_generated_by_perl" : "v5.28.1",
    "x_serialization_backend" : "Cpanel::JSON::XS version 4.10",
    "x_static_install" : 1
