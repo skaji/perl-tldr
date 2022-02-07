@@ -8,7 +8,7 @@ use Getopt::Long qw(:config no_auto_abbrev no_ignore_case bundling);
 use HTTP::Tiny;
 use IO::Handle;
 use IO::Socket::SSL;
-use Pod::Usage 'pod2usage';
+use Pod::Usage 1.33 ();
 use Term::ReadKey ();
 use Text::Fold ();
 
@@ -30,7 +30,7 @@ sub parse_options {
     local @ARGV = @argv;
     $self->{platform} = [];
     GetOptions
-        "h|help"    => sub { $self->_help },
+        "h|help"    => sub { print $self->_help; exit },
         "o|os=s@"   => \($self->{platform}),
         "v|version" => sub { printf "%s %s\n", ref $self, $self->VERSION; exit },
         "pager=s"   => \my $pager,
@@ -59,7 +59,18 @@ sub _guess_pager {
 
 sub _help {
     my ($self, $exit) = @_;
-    pod2usage( $exit || 0 );
+    open my $fh, '>', \my $out;
+    Pod::Usage::pod2usage
+        exitval => 'noexit',
+        input => $0,
+        output => $fh,
+        sections => 'SYNOPSIS',
+        verbose => 99,
+    ;
+    $out =~ s/^Usage:\n//;
+    $out =~ s/^[ ]{6}//mg;
+    $out =~ s/\n$//;
+    $out;
 }
 
 

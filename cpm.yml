@@ -4,6 +4,7 @@ prereqs:
       File::Which:
       HTTP::Tiny:
       IO::Socket::SSL:
+      Pod::Usage: { version: '1.33' }
       Term::ReadKey:
       Text::Fold:
       perl: { version: '5.008005' }

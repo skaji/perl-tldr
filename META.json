@@ -29,6 +29,7 @@
             "File::Which" : "0",
             "HTTP::Tiny" : "0",
             "IO::Socket::SSL" : "0",
+            "Pod::Usage" : "1.33",
             "Term::ReadKey" : "0",
             "Text::Fold" : "0",
             "perl" : "5.008005"

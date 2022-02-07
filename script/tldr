@@ -13,7 +13,7 @@ tldr - a perl tldr client
 
 =head1 SYNOPSIS
 
-  $ tldr command
+  Usage: tldr [command]
 
   Options:
    -o, --os=OS     os (osx, sunos or linux)
