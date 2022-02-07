@@ -29,12 +29,15 @@ sub parse_options {
     my ($self, @argv) = @_;
     local @ARGV = @argv;
     $self->{platform} = [];
+
+    $self->{unicode} = ($ENV{LANG} || "") =~ /UTF-8/i ? 1 : 0;
     GetOptions
         "h|help"    => sub { print $self->_help; exit },
         "o|os=s@"   => \($self->{platform}),
         "v|version" => sub { printf "%s %s\n", ref $self, $self->VERSION; exit },
         "pager=s"   => \my $pager,
         "no-pager"  => \my $no_pager,
+        "unicode!" => \$self->{unicode},
     or exit(2);
     $self->{argv} = \@ARGV;
     if (!$no_pager and -t STDOUT and my $guess = $self->_guess_pager($pager)) {
@@ -135,6 +138,8 @@ my $SUSHI = "\N{U+1F363}";
 sub _render {
     my ($self, $content, $query) = @_;
 
+    my ($check, $prompt) = $self->{unicode} ? ($CHECK, $SUSHI) : ('*', '$');
+
     my $width = $ENV{COLUMNS} || (Term::ReadKey::GetTerminalSize())[0];
     $width -= 4;
 
@@ -171,7 +176,7 @@ sub _render {
         } elsif ($line =~ s/^[*-]\s*//) {
             my $fold = Text::Fold::fold_text($line, $width - 2);
             my ($first, @rest) = split /\n/, $fold;
-            $out->print("  \e[1m$CHECK \e[4m$first\e[m\n");
+            $out->print("  \e[1m$check \e[4m$first\e[m\n");
             $out->print("    \e[1m\e[4m$_\e[m\n") for @rest;
             $out->print("\n");
         } elsif ($line =~ /`([^`]+)`/) {
@@ -179,7 +184,7 @@ sub _render {
             $code =~ s/\b$query\b/
               "\e[32m$query\e[m"
             /eg;
-            $out->print("    $SUSHI  $code\n\n");
+            $out->print("    $prompt $code\n\n");
         }
     }
 }
