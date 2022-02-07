@@ -17,7 +17,7 @@ sub run {
     Result->new(out => $out, err => $err, exit => $exit);
 }
 
-ok run->exit != 0;
+ok run()->exit != 0;
 ok run("--help")->exit == 0;
 ok run("--version")->exit == 0;
 

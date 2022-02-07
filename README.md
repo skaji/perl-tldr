@@ -1,10 +1,10 @@
-# tldr [![Build Status](https://travis-ci.com/skaji/perl-tldr.svg?branch=master)](https://travis-ci.com/skaji/perl-tldr)
+# tldr [![Actions Status](https://github.com/skaji/perl-tldr/workflows/test/badge.svg)](https://github.com/skaji/perl-tldr/actions)
 
-> a perl client for [tldr](http://tldr-pages.github.io/)
+> a perl client for [tldr](https://tldr.sh/)
 
 - Install
 
-`cpanm -nq App::tldr`
+`cpm install -g App::tldr`
 
 - Show `tar` tldr
 
