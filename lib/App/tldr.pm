@@ -196,7 +196,7 @@ __END__
 
 =head1 NAME
 
-App::tldr - a perl client for http://tldr-pages.github.io/
+App::tldr - a perl client for https://tldr.sh/
 
 =head1 SYNOPSIS
 
@@ -204,7 +204,7 @@ App::tldr - a perl client for http://tldr-pages.github.io/
 
 =head1 DESCRIPTION
 
-App::tldr is a client for L<http://tldr-pages.github.io/>.
+App::tldr is a client for L<https://tldr.sh/>.
 
 =head1 SEE ALSO
 

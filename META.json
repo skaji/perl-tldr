@@ -1,5 +1,5 @@
 {
-   "abstract" : "a perl client for http://tldr-pages.github.io/",
+   "abstract" : "a perl client for https://tldr.sh/",
    "author" : [
       "Shoichi Kaji <skaji@cpan.org>"
    ],
