@@ -124,7 +124,7 @@ my $SUSHI = "\N{U+1F363}";
 sub _render {
     my ($self, $content, $query) = @_;
 
-    my ($width) = Term::ReadKey::GetTerminalSize();
+    my $width = $ENV{COLUMNS} || (Term::ReadKey::GetTerminalSize())[0];
     $width -= 4;
 
     my @line = split /\n/, $content;

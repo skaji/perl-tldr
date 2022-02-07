@@ -23,4 +23,4 @@ jobs:
       - run: perl -V
       - name: Install Dependencies
         run: curl -fsSL --compressed https://git.io/cpm | perl - install -g --with-develop --with-recommends --show-build-log-on-failure
-      - run: prove -l t
+      - run: env COLUMNS=100 prove -l t xt
