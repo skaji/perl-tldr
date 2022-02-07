@@ -1,0 +1,12 @@
+prereqs:
+  runtime:
+    requires:
+      File::Which:
+      HTTP::Tiny:
+      IO::Socket::SSL:
+      Term::ReadKey:
+      Text::Fold:
+      perl: { version: '5.008005' }
+  develop:
+    requires:
+      Capture::Tiny:
