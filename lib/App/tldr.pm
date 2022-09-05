@@ -123,7 +123,7 @@ sub _local_get {
 
 sub run {
     my $self = shift;
-    my $arg  = shift @{$self->{argv}} or $self->_help(1);
+    my $arg  = shift @{$self->{argv}} or die $self->_help(1);
     my $content;
     for my $platform (@{ $self->{platform} }) {
         ($content, my $err) = $self->_get($arg, $platform);
