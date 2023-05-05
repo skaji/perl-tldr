@@ -13,7 +13,7 @@ use Term::ReadKey ();
 use Text::Fold ();
 
 use constant DEBUG => !!$ENV{TLDR_DEBUG};
-use constant REPOSITORY => !!$ENV{TLDR_REPOSITORY};
+use constant REPOSITORY => $ENV{TLDR_REPOSITORY} // '';
 
 my $URL = "https://raw.githubusercontent.com/tldr-pages/tldr/main/pages%s/%s/%s.md";
 
