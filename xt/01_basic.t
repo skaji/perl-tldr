@@ -1,16 +1,17 @@
-use strict;
+use v5.16;
 use warnings;
-use utf8;
+
 use Test::More;
 use Capture::Tiny 'capture';
-{
-    package Result;
+
+package Result {
     sub new { my $class = shift; bless {@_}, $class }
     for my $attr (qw(err out exit)) {
         no strict 'refs';
         *$attr = sub { shift->{$attr} };
     }
 }
+
 sub run {
     my @argv = @_;
     my ($out, $err, $exit) = capture { system $^X, "-Ilib", "script/tldr", @argv };

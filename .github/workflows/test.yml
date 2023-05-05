@@ -14,13 +14,13 @@ jobs:
     strategy:
       matrix:
         perl-version:
-          - '5.8-buster'
+          - '5.16-buster'
           - 'latest'
     container:
       image: perl:${{ matrix.perl-version }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: perl -V
       - name: Install Dependencies
-        run: curl -fsSL --compressed https://git.io/cpm | perl - install -g --with-develop --with-recommends --show-build-log-on-failure
+        run: curl -fsSL --compressed https://raw.githubusercontent.com/skaji/cpm/main/cpm | perl - install -g --with-develop --with-recommends --show-build-log-on-failure
       - run: env COLUMNS=100 prove -l t xt

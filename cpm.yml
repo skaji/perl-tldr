@@ -2,12 +2,12 @@ prereqs:
   runtime:
     requires:
       File::Which:
-      HTTP::Tiny:
+      Getopt::Long: { version: '2.39' }
+      HTTP::Tiny: { version: '0.082' }
       IO::Socket::SSL:
-      Pod::Usage: { version: '1.33' }
       Term::ReadKey:
       Text::Fold:
-      perl: { version: '5.008005' }
+      perl: { version: 'v5.16' }
   develop:
     requires:
       Capture::Tiny:
