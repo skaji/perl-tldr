@@ -1,4 +1,4 @@
-package App::tldr 0.20;
+package App::tldr 0.21;
 use v5.16;
 use warnings;
 

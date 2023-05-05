@@ -39,7 +39,7 @@
    "provides" : {
       "App::tldr" : {
          "file" : "lib/App/tldr.pm",
-         "version" : "0.20"
+         "version" : "0.21"
       }
    },
    "release_status" : "stable",
@@ -54,7 +54,7 @@
          "web" : "https://github.com/skaji/perl-tldr"
       }
    },
-   "version" : "0.20",
+   "version" : "0.21",
    "x_contributors" : [
       "Shoichi Kaji <skaji@outlook.com>",
       "zhumengu <m.zhumeng@gmail.com>"
